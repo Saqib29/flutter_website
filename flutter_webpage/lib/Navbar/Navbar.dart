@@ -27,22 +27,40 @@ class DesktopNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          Text("Saqib Studio", style: TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.white, fontSize: 30,)
-          ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      child: Container(
+        
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text("Saqib Studio", style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.white, fontSize: 30,)
+            ),
 
-          Row(
-            children: <Widget>[
-              Text("Home", style: TextStyle(color: Colors.white)),
-              Text("About us", style: TextStyle(color: Colors.white)),
-              Text("Portfolio", style: TextStyle(color: Colors.white)),
-
-            ],
-          ),
-        ],
+            Row(
+              children: <Widget>[
+                Text("Home", style: TextStyle(color: Colors.white)),
+                SizedBox(width: 30),
+                Text("About us", style: TextStyle(color: Colors.white)),
+                SizedBox(width: 30),
+                Text("Portfolio", style: TextStyle(color: Colors.white)),
+                SizedBox(width: 30),
+                MaterialButton(
+                  onPressed: (){},
+                  color: Colors.pink,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  ),
+                  child: Text(
+                    "Get started",
+                    style: TextStyle(color: Colors.white),
+                  ), 
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -51,8 +69,33 @@ class DesktopNavbar extends StatelessWidget {
 class MobileNavbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40), 
+      child: Container(
+        child: Column(
+          children: <Widget>[
+              Text("Saqib Studio", style: TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.white, fontSize: 30,)
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("Home", style: TextStyle(color: Colors.white)),
+                    SizedBox(width: 30),
+                    Text("About us", style: TextStyle(color: Colors.white)),
+                    SizedBox(width: 30),
+                    Text("Portfolio", style: TextStyle(color: Colors.white)),
+                    SizedBox(width: 30),
+                    
+                  ],
+                ),
+              ),
+            ],
+        ),
+      ),
     );
   }
 }
